@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
-import { Instagram, MapPin, Phone } from "lucide-react"
+import { MapPin, Phone } from "lucide-react"
+import { InstagramIcon } from "@/components/icons"
 import { PageHeader } from "@/components/page-header"
 import { WhatsAppIcon } from "@/components/icons"
 import { siteConfig } from "@/lib/config"
@@ -42,7 +43,7 @@ export default function ContactPage() {
             rel="noopener noreferrer"
             className="group flex flex-col gap-3 rounded-sm border border-border p-8 transition-colors hover:border-accent"
           >
-            <Instagram className="h-7 w-7 text-accent" />
+            <InstagramIcon className="h-7 w-7 text-accent" />
             <h2 className="text-xl font-medium">Instagram</h2>
             <p className="text-sm text-muted-foreground">
               Follow for new arrivals and styling ideas.
