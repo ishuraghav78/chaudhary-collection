@@ -126,4 +126,57 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         (i) => lineKey(i.productId, i.size) === lineKey(productId, newSize),
       )
       let items = prev.items.filter(
-        (i) => lineKey(i.productId, i.size) !== lineK
+        (i) => lineKey(i.productId, i.size) !== lineKey(productId, oldSize),
+      )
+      if (mergeInto) {
+        items = items.map((i) =>
+          lineKey(i.productId, i.size) === lineKey(productId, newSize)
+            ? { ...i, quantity: i.quantity + target.quantity }
+            : i,
+        )
+      } else {
+        items = [...items, { ...target, size: newSize }]
+      }
+      return { ...prev, items }
+    })
+  }, [])
+
+  const clearCart = React.useCallback(() => {
+    setState((prev) => ({ ...prev, items: [] }))
+  }, [])
+
+  const saveCustomer = React.useCallback((details: CustomerDetails) => {
+    setState((prev) => ({ ...prev, customer: details }))
+  }, [])
+
+  const totalQuantity = React.useMemo(
+    () => state.items.reduce((sum, i) => sum + i.quantity, 0),
+    [state.items],
+  )
+  const subtotal = React.useMemo(
+    () => state.items.reduce((sum, i) => sum + i.quantity * i.unitPrice, 0),
+    [state.items],
+  )
+
+  const value: CartContextValue = {
+    items: state.items,
+    customer: state.customer,
+    totalQuantity,
+    subtotal,
+    addItem,
+    removeItem,
+    updateQuantity,
+    updateSize,
+    clearCart,
+    saveCustomer,
+    hydrated,
+  }
+
+  return <CartContext.Provider value={value}>{children}</CartContext.Provider>
+}
+
+export function useCart() {
+  const ctx = React.useContext(CartContext)
+  if (!ctx) throw new Error("useCart must be used within CartProvider")
+  return ctx
+}
