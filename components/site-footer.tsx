@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Instagram } from "lucide-react"
+import { InstagramIcon } from "@/components/icons"
 import { mainNav, siteConfig } from "@/lib/config"
 import { WhatsAppIcon } from "@/components/icons"
 
@@ -51,7 +51,7 @@ export function SiteFooter() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm text-foreground/80 transition-colors hover:text-accent"
                 >
-                  <Instagram className="h-4 w-4" /> {siteConfig.instagramHandle}
+                  <InstagramIcon className="h-4 w-4" /> {siteConfig.instagramHandle}
                 </a>
               </li>
               <li>
