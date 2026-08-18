@@ -3,7 +3,8 @@
 import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Instagram, Menu, ShoppingBag, X } from "lucide-react"
+import { Menu, ShoppingBag, X } from "lucide-react"
+import { InstagramIcon } from "@/components/icons"
 import { cn } from "@/lib/utils"
 import { mainNav, siteConfig } from "@/lib/config"
 import { useCart } from "@/lib/cart-context"
@@ -99,7 +100,7 @@ export function SiteHeader() {
             className="hidden rounded-sm p-2 text-foreground transition-colors hover:text-accent sm:inline-flex"
             aria-label="Chaudhary Collection on Instagram"
           >
-            <Instagram className="h-5 w-5" />
+            <InstagramIcon className="h-5 w-5" />
           </a>
           <a
             href={`https://wa.me/${siteConfig.whatsappNumber}`}
@@ -178,7 +179,7 @@ export function SiteHeader() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-accent"
             >
-              <Instagram className="h-5 w-5" /> Instagram
+              <InstagramIcon className="h-5 w-5" /> Instagram
             </a>
             <a
               href={`https://wa.me/${siteConfig.whatsappNumber}`}
