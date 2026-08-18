@@ -80,4 +80,38 @@ export function ProductCard({ product, priority = false }: { product: Product; p
           className={cn(
             "absolute inset-x-3 bottom-3 inline-flex items-center justify-center gap-2 rounded-sm bg-primary px-4 py-2.5 text-xs font-medium uppercase tracking-[0.14em] text-primary-foreground transition-all duration-300",
             "opacity-100 lg:translate-y-2 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100",
-            "disabled:cursor-not-allowed disabled:bg
+            "disabled:cursor-not-allowed disabled:bg-muted disabled:text-muted-foreground",
+          )}
+        >
+          {added ? (
+            <>
+              <Check className="h-4 w-4" /> Added
+            </>
+          ) : (
+            <>
+              <ShoppingBag className="h-4 w-4" />
+              {product.inStock ? "Add to Cart" : "Sold Out"}
+            </>
+          )}
+        </button>
+      </div>
+
+      <div className="mt-4 flex flex-col gap-1">
+        <Link href={`/product/${product.slug}`} className="transition-colors hover:text-accent">
+          <h3 className="text-pretty text-base font-medium leading-snug">{product.name}</h3>
+        </Link>
+        <div className="flex items-center gap-2">
+          <span className="text-sm text-foreground">{formatPrice(price)}</span>
+          {product.salePrice && (
+            <span className="text-xs text-muted-foreground line-through">
+              {formatPrice(product.price)}
+            </span>
+          )}
+        </div>
+        <p className="text-xs text-muted-foreground">
+          {product.sizeChart === "onesize" ? "Free size" : `Sizes ${product.sizes[0]}–${product.sizes[product.sizes.length - 1]}`}
+        </p>
+      </div>
+    </article>
+  )
+}
