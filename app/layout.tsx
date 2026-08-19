@@ -7,6 +7,7 @@ import { siteConfig } from "@/lib/config"
 import { CartProvider } from "@/lib/cart-context"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
+import { FloatingSocialButtons } from "@/components/floating-social-buttons"
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -73,6 +74,7 @@ export default function RootLayout({
           </Suspense>
           <main id="main">{children}</main>
           <SiteFooter />
+          <FloatingSocialButtons />
         </CartProvider>
         {process.env.NODE_ENV === "production" && <Analytics />}
       </body>
