@@ -1,8 +1,7 @@
 import type { Metadata } from "next"
 import { MapPin, Phone } from "lucide-react"
-import { InstagramIcon } from "@/components/icons"
 import { PageHeader } from "@/components/page-header"
-import { WhatsAppIcon } from "@/components/icons"
+import { WhatsAppIcon, InstagramIcon } from "@/components/icons"
 import { siteConfig } from "@/lib/config"
 
 export const metadata: Metadata = {
