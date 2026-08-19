@@ -28,7 +28,7 @@ export const siteConfig = {
 // Store photographs are provided later. These are easy-to-replace slots.
 // Replace the files at these paths with the real store photos.
 export const storeImages = {
-  heroExterior: "/store/hero-store.png",
+  heroExterior: "/store/hero-store.png.PNG",
   brandInterior: "/store/brand-store.png",
 } as const
 
