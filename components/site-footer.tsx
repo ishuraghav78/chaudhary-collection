@@ -1,7 +1,6 @@
 import Link from "next/link"
-import { InstagramIcon } from "@/components/icons"
 import { mainNav, siteConfig } from "@/lib/config"
-import { WhatsAppIcon } from "@/components/icons"
+import { WhatsAppIcon, InstagramIcon } from "@/components/icons"
 
 export function SiteFooter() {
   const year = new Date().getFullYear()
