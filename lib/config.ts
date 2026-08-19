@@ -29,7 +29,8 @@ export const siteConfig = {
 // Replace the files at these paths with the real store photos.
 export const storeImages = {
   heroExterior: "/store/hero-store.png.PNG",
-  brandInterior: "/store/brand-store.png",
+  brandInterior: "/store/brand-store.png.jpg",
+
 } as const
 
 export type NavItem = { label: string; href: string }
