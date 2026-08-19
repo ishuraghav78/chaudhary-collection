@@ -4,11 +4,10 @@ import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Menu, ShoppingBag, X } from "lucide-react"
-import { InstagramIcon } from "@/components/icons"
 import { cn } from "@/lib/utils"
 import { mainNav, siteConfig } from "@/lib/config"
 import { useCart } from "@/lib/cart-context"
-import { WhatsAppIcon } from "@/components/icons"
+import { WhatsAppIcon, InstagramIcon } from "@/components/icons"
 import { Logo } from "@/components/logo"
 
 export function SiteHeader() {
